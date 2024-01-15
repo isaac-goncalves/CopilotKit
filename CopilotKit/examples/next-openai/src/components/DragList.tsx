@@ -2,11 +2,22 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import "./style/dragList.css";
 import DraggableElement from "./DraggableElement";
+import styled from "styled-components";
 export type ItemType = {
     id: string;
     prefix: string;
     content: string;
 };
+
+const KabanContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    width: 100%;
+    padding: 20px;
+    border: 4px solid indianred;
+    border-radius: 6px;
+`;
 
 const DragList = () => {
     const lists = useMemo(() => ["todo", "inProgress", "done"], []);
@@ -93,7 +104,7 @@ const DragList = () => {
     // }, [generateLists]);
 
     return (
-        <div className="container">
+        <KabanContainer>
             <nav
         style={{ display: "flex", justifyContent: "space-between" }}
       >
@@ -137,7 +148,7 @@ const DragList = () => {
                     ))}
                 </div>
             </DragDropContext>
-        </div>
+        </KabanContainer>
     );
 };
 

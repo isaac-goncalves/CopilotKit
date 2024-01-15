@@ -21,6 +21,8 @@ const AppContainer = styled.div`
 const MainContent = styled.div`
   flex: 1;
   padding: 20px;
+  width: calc( 100vw - 250px ) ;
+  border : 1px solid black;
 `;
 
 
